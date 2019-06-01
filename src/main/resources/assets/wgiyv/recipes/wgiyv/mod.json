@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "wgiyv:mod",
+    "pattern": [
+        "III",
+        "IRI",
+        "III"
+    ],
+    "key": {
+		"I": [{"type": "forge:ore_dict", "ore": "ingotIron"}],
+        "R": [{"type": "forge:ore_dict", "ore": "dustRedstone"}]
+    },
+    "result": {
+        "item": "wgiyv:mod",
+		"count": 1
+    }
+}
