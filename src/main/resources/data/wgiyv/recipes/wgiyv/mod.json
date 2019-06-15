@@ -7,8 +7,8 @@
         "III"
     ],
     "key": {
-		"I": [{"type": "forge:ore_dict", "ore": "ingotIron"}],
-        "R": [{"type": "forge:ore_dict", "ore": "dustRedstone"}]
+		"I": {"tag": "forge:ingots/iron"},
+        "R": {"tag": "forge:dusts/redstone"}
     },
     "result": {
         "item": "wgiyv:mod",

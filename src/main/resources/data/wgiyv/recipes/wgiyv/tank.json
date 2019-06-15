@@ -7,8 +7,8 @@
         "III"
     ],
     "key": {
-		"I": [{"type": "forge:ore_dict", "ore": "ingotIron"}],
-        "G": [{"type": "forge:ore_dict", "ore": "blockGlass"}],
+		"I": {"tag": "forge:ingots/iron"},
+        "G": { "item": "minecraft:glass" },
         "B": { "item": "minecraft:iron_bars" }
     },
     "result": {

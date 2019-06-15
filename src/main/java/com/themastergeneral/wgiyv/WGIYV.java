@@ -1,45 +1,50 @@
 package com.themastergeneral.wgiyv;
 
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import com.themastergeneral.wgiyv.proxy.Common;
+import com.themastergeneral.wgiyv.items.ModItems;
 
-import net.minecraftforge.fml.common.FMLLog;
+import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.IForgeRegistry;
 
-@Mod(modid = ModInfo.MODID, name = ModInfo.MODNAME, certificateFingerprint = ModInfo.FingerPrint, version = ModInfo.VERSION, dependencies = ModInfo.DEPENDENCIES, updateJSON = ModInfo.updateJSON, acceptedMinecraftVersions = ModInfo.MCVersion)
+@Mod("wgiyv")
 public class WGIYV {
-	@Instance
-	public static WGIYV instance = new WGIYV();
-
-	@SidedProxy(clientSide = "com.themastergeneral.wgiyv.proxy.Client", serverSide = "com.themastergeneral.wgiyv.proxy.Server")
-	public static Common proxy;
-	public static Logger logger;
 	
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent e) {
-		proxy.preInit(e);
-	}
+	public static WGIYV instance;
+	private static final Logger LOGGER = LogManager.getLogger();
 
-	@EventHandler
-	public void init(FMLInitializationEvent e) {
-		proxy.init(e);
-	}
+	public static final String MODID = "wgiyv";
 
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent e) {
-		proxy.postInit(e);
-	}
+	public WGIYV() {
+		instance = this;
+        // Register the setup method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+
+        // Register ourselves for server, registry and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 	
-	@EventHandler
-	public void onFingerprintViolation(FMLFingerprintViolationEvent e) {
-		FMLLog.warning("Invalid fingerprint detected for WGIYV! TheMasterGeneral will not support this version!");
-	}
+	private void setup(final FMLCommonSetupEvent event)
+    {
+		LOGGER.info("We get it... you vape...");
+    }
+	
+	@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class Registration
+    {
+		@SubscribeEvent
+        public static void registerItems(final RegistryEvent.Register<Item> event)
+        {
+			IForgeRegistry<Item> itemRegistry = event.getRegistry();
+
+			itemRegistry.registerAll(ModItems.fullmod, ModItems.tank, ModItems.mod);
+        }
+    }
 }
