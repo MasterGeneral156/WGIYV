@@ -1,11 +1,14 @@
 package com.themastergeneral.wgiyv.items;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Particles;
+import net.minecraft.client.particle.ParticleManager;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particles.IParticleData;
+import net.minecraft.particles.ItemParticleData;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumHand;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
 public class VapeItem extends BasicItem {
@@ -15,16 +18,16 @@ public class VapeItem extends BasicItem {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
     {
-		worldIn.spawnParticle(Particles.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
-		worldIn.spawnParticle(Particles.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
-		worldIn.spawnParticle(Particles.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
-		worldIn.spawnParticle(Particles.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
-		worldIn.spawnParticle(Particles.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
-		worldIn.spawnParticle(Particles.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.4D, 0.0D);
-		worldIn.spawnParticle(Particles.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.3D, 0.0D);
-        return new ActionResult<ItemStack>(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.4D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.posX, playerIn.posY+1.3, playerIn.posZ, 0.0D, 0.3D, 0.0D);
+		return new ActionResult<>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
     }
 
 }
