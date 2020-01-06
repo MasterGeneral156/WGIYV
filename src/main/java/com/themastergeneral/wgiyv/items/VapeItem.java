@@ -17,13 +17,13 @@ public class VapeItem extends BasicItem {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
     {
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.serverPosX, playerIn.serverPosY+1.3, playerIn.serverPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.serverPosX, playerIn.serverPosY+1.3, playerIn.serverPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.serverPosX, playerIn.serverPosY+1.3, playerIn.serverPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.serverPosX, playerIn.serverPosY+1.3, playerIn.serverPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.serverPosX, playerIn.serverPosY+1.3, playerIn.serverPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.serverPosX, playerIn.serverPosY+1.3, playerIn.serverPosZ, 0.0D, 0.4D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.serverPosX, playerIn.serverPosY+1.3, playerIn.serverPosZ, 0.0D, 0.3D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.4D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.3D, 0.0D);
 		return new ActionResult<>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
     }
 
