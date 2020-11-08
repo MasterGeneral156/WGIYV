@@ -16,6 +16,6 @@ description="We get it, you vape!!"
 [[dependencies.wgiyv]]
     modId="ctdcore"
     mandatory=true
-    versionRange="[2.0.6,)"
+    versionRange="[2.1.0,)"
     ordering="BEFORE"
     side="BOTH"
