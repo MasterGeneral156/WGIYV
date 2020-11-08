@@ -9,7 +9,7 @@ authors="TheMasterGeneral"
 license="https://github.com/MasterGeneral156/WGIYV/blob/1.16/LICENSE"
 [[mods]] 
 modId="wgiyv"
-version="1.0.3"
+version="1.0.4"
 displayName="WGIYV" #mandatory
 description="We get it, you vape!!"
 
