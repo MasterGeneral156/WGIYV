@@ -35,6 +35,6 @@ import net.minecraft.item.Item;
 public class BasicItem extends CTDItem {
 	
 	public BasicItem(String name) {
-		super(new Item.Properties(), name, WGIYV.MODID);
+		super(new Item.Properties());
 	}
 }
