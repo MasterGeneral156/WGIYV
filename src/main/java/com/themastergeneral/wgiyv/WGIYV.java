@@ -30,6 +30,8 @@ package com.themastergeneral.wgiyv;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.themastergeneral.moglowstone.items.ItemRegistry;
+import com.themastergeneral.wgiyv.items.ItemRegistries;
 import com.themastergeneral.wgiyv.items.ModItems;
 
 import net.minecraft.item.Item;
@@ -55,6 +57,7 @@ public class WGIYV {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
         // Register ourselves for server, registry and other game events we are interested in
+        ItemRegistries.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         MinecraftForge.EVENT_BUS.register(this);
     }
 	
