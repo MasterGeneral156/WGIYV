@@ -34,7 +34,7 @@ import net.minecraft.item.Item;
 
 public class BasicItem extends CTDItem {
 	
-	public BasicItem(String name) {
+	public BasicItem() {
 		super(new Item.Properties());
 	}
 }

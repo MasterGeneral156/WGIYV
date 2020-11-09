@@ -37,8 +37,8 @@ import net.minecraft.world.World;
 
 public class VapeItem extends BasicItem {
 
-	public VapeItem(String name) {
-		super(name);
+	public VapeItem() {
+		super();
 	}
 	
 	@Override
