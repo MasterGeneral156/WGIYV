@@ -30,7 +30,6 @@ package com.themastergeneral.wgiyv;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.themastergeneral.moglowstone.items.ItemRegistry;
 import com.themastergeneral.wgiyv.items.ItemRegistries;
 import com.themastergeneral.wgiyv.items.ModItems;
 
