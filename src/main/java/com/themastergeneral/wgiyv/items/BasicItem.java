@@ -31,10 +31,11 @@ import com.themastergeneral.ctdcore.item.CTDItem;
 import com.themastergeneral.wgiyv.WGIYV;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 
 public class BasicItem extends CTDItem {
 	
 	public BasicItem() {
-		super(new Item.Properties());
+		super(new Item.Properties().group(ItemGroup.TOOLS));
 	}
 }
