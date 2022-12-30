@@ -30,9 +30,9 @@ package com.themastergeneral.wgiyv.items;
 import com.themastergeneral.wgiyv.WGIYV;
 
 import net.minecraft.world.item.Item;
-import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ItemRegistries {
 public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, WGIYV.MODID);
