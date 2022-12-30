@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "wgiyv:items/mod"
+        "layer0": "wgiyv:item/built_mod"
     }
 }
