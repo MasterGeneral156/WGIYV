@@ -1,11 +1,11 @@
 /*
-	Project:	Pumpkin Spice Latte 1.16
+	Project:	WGIYV
 	File:		com.themastergeneral.wgiyv.items.VapeItem
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/WGIYV
 	License:	MIT License
 
-				Copyright (c) 2019 MasterGeneral156
+				Copyright (c) 2022 MasterGeneral156
 				
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
@@ -27,13 +27,12 @@
 */
 package com.themastergeneral.wgiyv.items;
 
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 public class VapeItem extends BasicItem {
 
@@ -42,16 +41,17 @@ public class VapeItem extends BasicItem {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
+	public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn)
     {
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.4D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.lastTickPosX, playerIn.lastTickPosY+1.3, playerIn.lastTickPosZ, 0.0D, 0.3D, 0.0D);
-		return new ActionResult<>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.4D, 0.0D);
+		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.3D, 0.0D);
+		
+		return InteractionResultHolder.sidedSuccess(playerIn.getItemInHand(handIn), worldIn.isClientSide());
     }
 
 }

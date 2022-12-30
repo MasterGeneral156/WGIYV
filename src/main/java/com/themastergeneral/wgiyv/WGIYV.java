@@ -1,11 +1,11 @@
 /*
-	Project:	Pumpkin Spice Latte 1.16
+	Project:	WGIYV
 	File:		com.themastergeneral.wgiyv.WGIYV
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/WGIYV
 	License:	MIT License
 
-				Copyright (c) 2019 MasterGeneral156
+				Copyright (c) 2022 MasterGeneral156
 				
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@ import org.apache.logging.log4j.Logger;
 import com.themastergeneral.wgiyv.items.ItemRegistries;
 import com.themastergeneral.wgiyv.items.ModItems;
 
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

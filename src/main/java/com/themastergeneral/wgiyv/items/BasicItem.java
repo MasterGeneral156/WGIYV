@@ -1,11 +1,11 @@
 /*
-	Project:	Pumpkin Spice Latte 1.16
+	Project:	WGIYV
 	File:		com.themastergeneral.wgiyv.items.BasicItem
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/WGIYV
 	License:	MIT License
 
-				Copyright (c) 2019 MasterGeneral156
+				Copyright (c) 2022 MasterGeneral156
 				
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
@@ -30,12 +30,12 @@ package com.themastergeneral.wgiyv.items;
 import com.themastergeneral.ctdcore.item.CTDItem;
 import com.themastergeneral.wgiyv.WGIYV;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 
 public class BasicItem extends CTDItem {
 	
 	public BasicItem() {
-		super(new Item.Properties().group(ItemGroup.TOOLS));
+		super(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS));
 	}
 }
