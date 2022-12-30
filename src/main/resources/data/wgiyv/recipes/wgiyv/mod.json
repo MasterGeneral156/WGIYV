@@ -11,7 +11,7 @@
         "R": {"tag": "forge:dusts/redstone"}
     },
     "result": {
-        "item": "wgiyv:mod",
+        "item": "wgiyv:part_mod",
 		"count": 1
     }
 }

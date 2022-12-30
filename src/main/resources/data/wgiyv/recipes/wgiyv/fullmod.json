@@ -6,11 +6,11 @@
         "B"
     ],
     "key": {
-		"N": { "item": "wgiyv:tank" },
-        "B": { "item": "wgiyv:mod" }
+		"N": { "item": "wgiyv:part_tank" },
+        "B": { "item": "wgiyv:part_mod" }
     },
     "result": {
-        "item": "wgiyv:fullmod",
+        "item": "wgiyv:built_mod",
 		"count": 1
     }
 }

@@ -12,7 +12,7 @@
         "B": { "item": "minecraft:iron_bars" }
     },
     "result": {
-        "item": "wgiyv:tank",
+        "item": "wgiyv:part_tank",
 		"count": 1
     }
 }
