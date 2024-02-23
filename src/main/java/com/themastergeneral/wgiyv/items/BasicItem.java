@@ -5,7 +5,7 @@
 	Website: 	https://github.com/MasterGeneral156/WGIYV
 	License:	MIT License
 
-				Copyright (c) 2022 MasterGeneral156
+				Copyright (c) 2024 MasterGeneral156
 				
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
@@ -31,11 +31,12 @@ import com.themastergeneral.ctdcore.item.CTDItem;
 import com.themastergeneral.wgiyv.WGIYV;
 
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 
 public class BasicItem extends CTDItem {
 	
 	public BasicItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS));
+		super(new Item.Properties().stacksTo(1));
 	}
 }
