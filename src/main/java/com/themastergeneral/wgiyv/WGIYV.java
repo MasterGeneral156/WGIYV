@@ -34,15 +34,12 @@ import com.themastergeneral.wgiyv.items.ItemRegistries;
 import com.themastergeneral.wgiyv.items.ModItems;
 
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod("wgiyv")
 public class WGIYV {
@@ -70,9 +67,9 @@ public class WGIYV {
 		LOGGER.info("We get it... you vape...");
     }
 	
-	private void fillTab(CreativeModeTabEvent.BuildContents ev)
+	private void fillTab(BuildCreativeModeTabContentsEvent ev)
 	{
-		if (ev.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+		if (ev.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
 		{
 			ev.accept(ModItems.fullmod);
 			ev.accept(ModItems.mod);
