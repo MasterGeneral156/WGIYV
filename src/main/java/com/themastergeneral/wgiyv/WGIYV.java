@@ -33,9 +33,11 @@ import org.apache.logging.log4j.Logger;
 import com.themastergeneral.wgiyv.items.ItemRegistries;
 import com.themastergeneral.wgiyv.items.ModItems;
 
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -53,10 +55,13 @@ public class WGIYV {
 	public WGIYV() {
 		instance = this;
         // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
+        
+        modbus.addListener(this::setup);
+        modbus.addListener(this::fillTab);
 
         // Register ourselves for server, registry and other game events we are interested in
-        ItemRegistries.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ItemRegistries.ITEMS.register(modbus);
         MinecraftForge.EVENT_BUS.register(this);
     }
 	
@@ -65,15 +70,13 @@ public class WGIYV {
 		LOGGER.info("We get it... you vape...");
     }
 	
-	@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class Registration
-    {
-		@SubscribeEvent
-        public static void registerItems(final RegistryEvent.Register<Item> event)
-        {
-			IForgeRegistry<Item> itemRegistry = event.getRegistry();
-
-			itemRegistry.registerAll(ModItems.fullmod, ModItems.tank, ModItems.mod);
-        }
-    }
+	private void fillTab(CreativeModeTabEvent.BuildContents ev)
+	{
+		if (ev.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+		{
+			ev.accept(ModItems.fullmod);
+			ev.accept(ModItems.mod);
+			ev.accept(ModItems.tank);
+		}
+	}
 }
