@@ -1,12 +1,13 @@
 modLoader="javafml" #mandatory
-loaderVersion="[40,)"
+loaderVersion="[45,)"
 updateJSONURL="https://raw.githubusercontent.com/MasterGeneral156/Version/master/WGIYV.json"
 issueTrackerURL="https://github.com/MasterGeneral156/wgiyv/issues"
 displayURL="https://minecraft.curseforge.com/projects/wgiyv"
 logoFile="logo-new.png"
 credits=""
 authors="TheMasterGeneral"
-license="https://github.com/MasterGeneral156/WGIYV/blob/1.18/LICENSE"
+license="https://github.com/MasterGeneral156/WGIYV/blob/1.19/LICENSE"
+
 [[mods]] 
 modId="wgiyv"
 version="1.1.1"
@@ -16,6 +17,6 @@ description="We get it, you vape!!"
 [[dependencies.wgiyv]]
     modId="ctdcore"
     mandatory=true
-    versionRange="[2.1.0,)"
+    versionRange="[2.2,]"
     ordering="BEFORE"
     side="BOTH"
