@@ -37,7 +37,6 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 @Mod("wgiyv")
@@ -52,13 +51,10 @@ public class WGIYV {
 		instance = this;
         // Register the setup method for modloading
         modEventBus.addListener(this::setup);
-        
-        modEventBus.addListener(this::setup);
         modEventBus.addListener(this::fillTab);
 
         // Register ourselves for server, registry and other game events we are interested in
         ItemRegistries.ITEMS.register(modEventBus);
-        NeoForge.EVENT_BUS.register(this);
     }
 	
 	private void setup(final FMLCommonSetupEvent event)
