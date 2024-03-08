@@ -27,18 +27,18 @@
 */
 package com.themastergeneral.wgiyv.items;
 
+import java.util.function.Supplier;
+
 import com.themastergeneral.wgiyv.WGIYV;
 
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ItemRegistries {
-public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, WGIYV.MODID);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.createItems(WGIYV.MODID);
 	
 	//Base items
-	public static final RegistryObject<Item> fullmod = ITEMS.register("built_mod", () -> ModItems.fullmod);
-	public static final RegistryObject<Item> mod = ITEMS.register("part_mod", () -> ModItems.mod);
-	public static final RegistryObject<Item> tank = ITEMS.register("part_tank", () -> ModItems.tank);
+	public static final Supplier<Item> fullmod = ITEMS.register("built_mod", () -> ModItems.fullmod);
+	public static final Supplier<Item> mod = ITEMS.register("part_mod", () -> ModItems.mod);
+	public static final Supplier<Item> tank = ITEMS.register("part_tank", () -> ModItems.tank);
 }

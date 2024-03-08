@@ -34,12 +34,11 @@ import com.themastergeneral.wgiyv.items.ItemRegistries;
 import com.themastergeneral.wgiyv.items.ModItems;
 
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 @Mod("wgiyv")
 public class WGIYV {
@@ -49,17 +48,17 @@ public class WGIYV {
 
 	public static final String MODID = "wgiyv";
 
-	public WGIYV() {
+	public WGIYV(IEventBus modEventBus) {
 		instance = this;
         // Register the setup method for modloading
-        IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::setup);
         
-        modbus.addListener(this::setup);
-        modbus.addListener(this::fillTab);
+        modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::fillTab);
 
         // Register ourselves for server, registry and other game events we are interested in
-        ItemRegistries.ITEMS.register(modbus);
-        MinecraftForge.EVENT_BUS.register(this);
+        ItemRegistries.ITEMS.register(modEventBus);
+        NeoForge.EVENT_BUS.register(this);
     }
 	
 	private void setup(final FMLCommonSetupEvent event)
