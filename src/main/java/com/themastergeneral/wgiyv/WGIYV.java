@@ -30,6 +30,7 @@ package com.themastergeneral.wgiyv;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.themastergeneral.ctdcore.helpers.ModUtils;
 import com.themastergeneral.wgiyv.items.ItemRegistries;
 import com.themastergeneral.wgiyv.items.ModItems;
 
@@ -64,7 +65,7 @@ public class WGIYV {
 	
 	private void setup(final FMLCommonSetupEvent event)
     {
-		LOGGER.info("We get it... you vape...");
+		LOGGER.info("[" + MODID + "] launching on " + ModUtils.getLoader() + " v" + ModUtils.getLoaderVersion() + ".");
     }
 	
 	private void fillTab(BuildCreativeModeTabContentsEvent ev)
