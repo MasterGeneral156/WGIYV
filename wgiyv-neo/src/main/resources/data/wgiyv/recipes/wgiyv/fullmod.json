@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "wgiyv:fullmod",
+    "pattern": [
+        "N",
+        "B"
+    ],
+    "key": {
+		"N": { "item": "wgiyv:part_tank" },
+        "B": { "item": "wgiyv:part_mod" }
+    },
+    "result": {
+        "item": "wgiyv:built_mod",
+		"count": 1
+    }
+}
