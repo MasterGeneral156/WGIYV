@@ -1,18 +1,16 @@
 {
     "type": "minecraft:crafting_shaped",
-    "group": "wgiyv:tank",
     "pattern": [
         " I ",
         "GBG",
         "III"
     ],
     "key": {
-		"I": {"tag": "forge:ingots/iron"},
-        "G": { "tag": "forge:glass" },
+		"I": {"tag": "c:ingots/iron"},
+        "G": { "tag": "c:glass_blocks" },
         "B": { "item": "minecraft:iron_bars" }
     },
     "result": {
-        "item": "wgiyv:part_tank",
-		"count": 1
+        "id": "wgiyv:part_tank"
     }
 }
