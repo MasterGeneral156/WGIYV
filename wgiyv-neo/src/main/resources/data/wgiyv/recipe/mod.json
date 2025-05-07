@@ -6,8 +6,8 @@
         "III"
     ],
     "key": {
-		"I": {"tag": "c:ingots/iron"},
-        "R": {"tag": "c:dusts/redstone"}
+		"I": "#c:ingots/iron",
+        "R": "#c:dusts/redstone"
     },
     "result": {
         "id": "wgiyv:part_mod"

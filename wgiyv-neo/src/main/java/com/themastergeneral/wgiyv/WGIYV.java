@@ -34,7 +34,6 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 import com.themastergeneral.ctdcore.helpers.ModUtils;
 import com.themastergeneral.wgiyv.items.ItemRegistries;
-import com.themastergeneral.wgiyv.items.ModItems;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import org.apache.logging.log4j.LogManager;
@@ -60,16 +59,16 @@ public class WGIYV {
 	
 	private void setup(final FMLCommonSetupEvent event)
     {
-		LOGGER.info("[" + MODID + "] launching on " + ModUtils.getLoader() + " v" + ModUtils.getLoaderVersion() + ".");
+		LOGGER.info("Launching on " + ModUtils.getLoader() + " v" + ModUtils.getLoaderVersion() + ".");
     }
 	
 	private void fillTab(BuildCreativeModeTabContentsEvent ev)
 	{
 		if (ev.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
 		{
-			ev.accept(ModItems.fullmod);
-			ev.accept(ModItems.mod);
-			ev.accept(ModItems.tank);
+			ev.accept(ItemRegistries.fullmod);
+			ev.accept(ItemRegistries.mod);
+			ev.accept(ItemRegistries.tank);
 		}
 	}
 }

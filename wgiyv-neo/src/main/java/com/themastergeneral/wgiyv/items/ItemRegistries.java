@@ -27,19 +27,21 @@
 */
 package com.themastergeneral.wgiyv.items;
 
-import com.themastergeneral.wgiyv.WGIYV;
-
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.function.Supplier;
 
 public class ItemRegistries {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems("wgiyv");
 
 	public static final DeferredItem<Item> tank = ITEMS.registerSimpleItem("part_tank", new Item.Properties());
 	public static final DeferredItem<Item> mod = ITEMS.registerSimpleItem("part_mod", new Item.Properties());
-	public static final DeferredItem<Item> fullmod = ITEMS.register("built_mod", VapeItem::new);
+
+	public static final DeferredItem<Item> fullmod = ITEMS.registerItem(
+			"built_mod",
+			VapeItem::new, // The factory that the properties will be passed into.
+			new Item.Properties() // The properties to use.
+	);
+
 
 }

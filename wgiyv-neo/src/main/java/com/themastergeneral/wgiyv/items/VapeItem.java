@@ -31,12 +31,13 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 
-public class VapeItem extends BasicItem {
+public class VapeItem extends Item {
 
-	public VapeItem() {
-		super();
+	public VapeItem(Item.Properties prop) {
+		super(prop);
 	}
 	
 	@Override

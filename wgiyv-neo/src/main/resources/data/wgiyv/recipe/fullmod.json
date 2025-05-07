@@ -5,8 +5,8 @@
         "B"
     ],
     "key": {
-		"N": { "item": "wgiyv:part_tank" },
-        "B": { "item": "wgiyv:part_mod" }
+		"N": "wgiyv:part_tank",
+        "B": "wgiyv:part_mod"
     },
     "result": {
         "id": "wgiyv:built_mod"
