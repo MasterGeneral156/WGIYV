@@ -27,14 +27,9 @@
 */
 package com.themastergeneral.wgiyv.items;
 
-import com.themastergeneral.ctdcore.item.CTDItem;
-import com.themastergeneral.wgiyv.WGIYV;
-
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 
-public class BasicItem extends CTDItem {
+public class BasicItem extends Item {
 	
 	public BasicItem() {
 		super(new Item.Properties().stacksTo(1));

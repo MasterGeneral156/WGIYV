@@ -29,9 +29,8 @@ package com.themastergeneral.wgiyv.items;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class VapeItem extends BasicItem {
@@ -41,7 +40,7 @@ public class VapeItem extends BasicItem {
 	}
 	
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn)
+	public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn)
     {
 		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
 		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
@@ -51,7 +50,7 @@ public class VapeItem extends BasicItem {
 		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.4D, 0.0D);
 		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.3D, 0.0D);
 		
-		return InteractionResultHolder.sidedSuccess(playerIn.getItemInHand(handIn), worldIn.isClientSide());
+		return InteractionResult.PASS;
     }
 
 }
