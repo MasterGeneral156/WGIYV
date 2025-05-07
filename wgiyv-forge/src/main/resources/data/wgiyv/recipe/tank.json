@@ -6,9 +6,9 @@
         "III"
     ],
     "key": {
-		"I": {"tag": "forge:ingots/iron"},
-        "G": { "tag": "forge:glass" },
-        "B": { "item": "minecraft:iron_bars" }
+		"I": "#forge:ingots/iron",
+        "G": "#forge:glass",
+        "B": "minecraft:iron_bars"
     },
     "result": {
         "id": "wgiyv:part_tank"
