@@ -2,5 +2,4 @@
 ./gradlew idea
 ./gradlew idea
 ./gradlew idea
-./gradlew prepareRuns
-./gradlew genIntellijRuns
+PAUSE

@@ -1,5 +1,3 @@
-modLoader="javafml" #mandatory
-loaderVersion="${loader_version_range}" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 license="${mod_license}"
 issueTrackerURL="https://github.com/MasterGeneral156/WGIYV/issues" #optional
 [[mods]] #mandatory
@@ -14,8 +12,22 @@ authors="${mod_authors}" #optional
 description='''${mod_description}'''
 
 [[dependencies.${mod_id}]] #optional
-    modId="ctdcore" #mandatory
-    mandatory=true
-    versionRange="[2.8,)" #mandatory
-    ordering="AFTER"
+    modId="neoforge" #mandatory
+    type="required" #mandatory
+    versionRange="[${neo_version},)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="ctdcore"
+    type="required"
+    versionRange="${ctd_core_ver_range}"
+    ordering="NONE"
     side="BOTH"
