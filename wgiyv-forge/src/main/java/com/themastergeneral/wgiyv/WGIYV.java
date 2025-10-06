@@ -37,7 +37,6 @@ import com.themastergeneral.wgiyv.items.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -50,17 +49,18 @@ public class WGIYV {
 
 	public static final String MODID = "wgiyv";
 
-	public WGIYV() {
+	public WGIYV(FMLJavaModLoadingContext context) {
 		instance = this;
         // Register the setup method for modloading
-        IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
+        var modBusGroup = context.getModBusGroup();
+
+        var modbus = FMLCommonSetupEvent.getBus(modBusGroup);
         
         modbus.addListener(this::setup);
-        modbus.addListener(this::fillTab);
+        BuildCreativeModeTabContentsEvent.BUS.addListener(this::fillTab);
 
         // Register ourselves for server, registry and other game events we are interested in
-        ItemRegistries.ITEMS.register(modbus);
-        MinecraftForge.EVENT_BUS.register(this);
+        ItemRegistries.ITEMS.register(modBusGroup);
     }
 	
 	private void setup(final FMLCommonSetupEvent event)
