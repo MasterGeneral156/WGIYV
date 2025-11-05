@@ -7,8 +7,8 @@
     ],
     "key": {
 		"I": "#c:ingots/iron",
-        "G": "#c:glass",
-        "B": "minecraft:iron_bars"
+        "G": "#c:glass_blocks",
+        "B": "#minecraft:bars"
     },
     "result": {
         "id": "wgiyv:part_tank"
