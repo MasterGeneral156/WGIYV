@@ -27,11 +27,11 @@
 */
 package com.themastergeneral.wgiyv.items;
 
-import net.minecraft.world.item.Item;
+import com.themastergeneral.ctdcore.item.CTDItem;
 
-public class BasicItem extends Item {
+public class BasicItem extends CTDItem {
 	
-	public BasicItem() {
-		super(new Item.Properties().stacksTo(1));
+	public BasicItem(Properties properties) {
+		super(properties.stacksTo(1));
 	}
 }

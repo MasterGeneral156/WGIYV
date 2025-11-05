@@ -27,6 +27,7 @@
 */
 package com.themastergeneral.wgiyv.items;
 
+import com.themastergeneral.ctdcore.helpers.IntColors;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -34,14 +35,14 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ItemRegistries {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems("wgiyv");
 
-	public static final DeferredItem<Item> tank = ITEMS.registerSimpleItem("part_tank", new Item.Properties());
-	public static final DeferredItem<Item> mod = ITEMS.registerSimpleItem("part_mod", new Item.Properties());
+    public static final DeferredItem<Item> tank = ITEMS.registerItem(
+            "part_tank", properties -> new BasicItem(properties));
 
-	public static final DeferredItem<Item> fullmod = ITEMS.registerItem(
-			"built_mod",
-			VapeItem::new, // The factory that the properties will be passed into.
-			new Item.Properties() // The properties to use.
-	);
+    public static final DeferredItem<Item> mod = ITEMS.registerItem(
+            "part_mod", properties -> new BasicItem(properties));
+
+    public static final DeferredItem<Item> fullmod = ITEMS.registerItem(
+            "built_mod", properties -> new VapeItem(properties));
 
 
 }
