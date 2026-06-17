@@ -1,5 +1,5 @@
 /**
-	Project:	WGIYV 26.1.2 Neoforge
+	Project:	WGIYV 26.2 Neoforge
 	File:		com.themastergeneral.wgiyv.items.ItemRegistries
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/WGIYV
