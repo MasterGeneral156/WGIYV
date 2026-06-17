@@ -36,13 +36,13 @@ public class ItemRegistries {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems("wgiyv");
 
     public static final DeferredItem<Item> tank = ITEMS.registerItem(
-            "part_tank", properties -> new BasicItem(properties));
+            "part_tank", BasicItem::new);
 
     public static final DeferredItem<Item> mod = ITEMS.registerItem(
-            "part_mod", properties -> new BasicItem(properties));
+            "part_mod", BasicItem::new);
 
     public static final DeferredItem<Item> fullmod = ITEMS.registerItem(
-            "built_mod", properties -> new VapeItem(properties));
+            "built_mod", VapeItem::new);
 
 
 }
