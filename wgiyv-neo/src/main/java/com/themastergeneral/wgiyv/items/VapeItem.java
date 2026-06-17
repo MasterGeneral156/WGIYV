@@ -6,17 +6,17 @@
 	License:	MIT License
 
 				Copyright (c) 2026 MasterGeneral156
-				
+
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
 				in the Software without restriction, including without limitation the rights
 				to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 				copies of the Software, and to permit persons to whom the Software is
 				furnished to do so, subject to the following conditions:
-				
+
 				The above copyright notice and this permission notice shall be included in all
 				copies or substantial portions of the Software.
-				
+
 				THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 				IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 				FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -28,29 +28,42 @@
 package com.themastergeneral.wgiyv.items;
 
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
 public class VapeItem extends Item {
 
 	public VapeItem(Item.Properties prop) {
 		super(prop);
 	}
-	
+
 	@Override
-	public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn)
+	public InteractionResult use(Level level, Player player, InteractionHand hand)
     {
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.5D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.4D, 0.0D);
-		worldIn.addParticle(ParticleTypes.CLOUD, playerIn.getX(), playerIn.getEyeY(), playerIn.getZ(), 0.0D, 0.3D, 0.0D);
-		
+		Vec3 look = player.getLookAngle();
+
+		for (int i = 0; i < 20; i++) {
+
+			double distance = i * 0.5D;
+
+			double x = player.getX() + look.x * distance;
+			double y = player.getEyeY() + look.y * distance;
+			double z = player.getZ() + look.z * distance;
+
+			level.addParticle(
+					ParticleTypes.CLOUD,
+					x, y, z,
+					look.x * 0.1D,
+					look.y * 0.1D,
+					look.z * 0.1D
+			);
+		}
+
 		return InteractionResult.PASS;
     }
 
