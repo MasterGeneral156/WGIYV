@@ -1,0 +1,27 @@
+{
+  "parent": "wgiyv:craft_mod",
+  "display": {
+    "icon": {
+      "id": "wgiyv:built_mod"
+    },
+    "title": {
+      "translate": "advancement.wgiyv.use"
+    },
+    "description": {
+      "translate": "advancement.wgiyv.use.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "used": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "wgiyv:built_mod"
+          ]
+        }
+      }
+    }
+  }
+}

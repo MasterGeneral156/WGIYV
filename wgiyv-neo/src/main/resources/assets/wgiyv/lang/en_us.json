@@ -1,5 +1,9 @@
 {
     "item.wgiyv.built_mod": "Vape",
     "item.wgiyv.part_mod": "Vape Box Mod",
-    "item.wgiyv.part_tank": "Tank"
+    "item.wgiyv.part_tank": "Tank",
+    "advancement.wgiyv.craft": "Vapey Goodness",
+    "advancement.wgiyv.craft.desc": "Craft the full Vape",
+    "advancement.wgiyv.use": "Vape Nashe, Y'all",
+    "advancement.wgiyv.use.desc": "Toke on the Vape"
 }

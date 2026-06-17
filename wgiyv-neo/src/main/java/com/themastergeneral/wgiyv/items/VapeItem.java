@@ -27,14 +27,19 @@
 */
 package com.themastergeneral.wgiyv.items;
 
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+
+import java.util.Objects;
 
 public class VapeItem extends Item {
 
@@ -63,7 +68,17 @@ public class VapeItem extends Item {
 					look.z * 0.1D
 			);
 		}
+		if (player instanceof ServerPlayer serverPlayer) {
+			var advancement = Objects.requireNonNull(level.getServer()).getAdvancements()
+					.get(Identifier.fromNamespaceAndPath(
+							"wgiyv",
+							"use_mod"));
 
+			if (advancement != null) {
+				serverPlayer.getAdvancements()
+						.award(advancement, "used");
+			}
+		}
 		return InteractionResult.PASS;
     }
 

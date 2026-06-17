@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "wgiyv:built_mod"
+    },
+    "title": {
+      "translate": "advancement.wgiyv.craft"
+    },
+    "description": {
+      "translate": "advancement.wgiyv.craft.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "wgiyv:built_mod"
+      }
+    }
+  }
+}
