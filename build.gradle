@@ -112,6 +112,10 @@ repositories {
 		url = "https://694272r.chickenkiller.com/mcmodsrepo/"
 	}
 	maven {
+		name = "MasterGeneral156 - Public"
+		url = "https://74.208.72.138/mcmodsrepo/"
+	}
+	maven {
 		name = "MasterGeneral156 - LAN"
 		url = "http://192.168.1.30/mcmodsrepo/"
 		allowInsecureProtocol = true
@@ -119,7 +123,7 @@ repositories {
 }
 
 dependencies {
-	implementation("com.themastergeneral.ctdcore:ctd-core-neo:${project.property('ctd_core_ver')}")
+	implementation("com.themastergeneral.ctdcore:CTD-Core:${project.property('ctd_core_ver')}")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
